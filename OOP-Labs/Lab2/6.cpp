@@ -6,38 +6,49 @@ int main()
     int size = 5;
     int count = 0;
     int *arr = new int[size];
-    int num;
+    int n;
 
-    cout << "Enter numbers (-1 to stop):" << endl;
-    while (true)
+    cout << "Enter numbers (-1 to stop): ";
+    cin >> n;
+
+    while (n != -1)
     {
-        cin >> num;
-        if (num == -1)
-            break;
-
         if (count == size)
         {
             size = size * 2;
-            int *temp = new int[size];
+            int *newArr = new int[size];
+
             for (int i = 0; i < count; i++)
-                temp[i] = arr[i];
+            {
+                newArr[i] = arr[i];
+            }
+
             delete[] arr;
-            arr = temp;
+            arr = newArr;
+            cout << "Array doubled! New size: " << size << endl;
         }
 
-        arr[count] = num;
+        arr[count] = n;
         count++;
+
+        cin >> n;
     }
 
-    int *final = new int[count];
+    cout << "\nShrinking array to size " << count << endl;
+    int *finalArr = new int[count];
     for (int i = 0; i < count; i++)
-        final[i] = arr[i];
+    {
+        finalArr[i] = arr[i];
+    }
     delete[] arr;
-    arr = final;
+    arr = finalArr;
 
-    cout << "Array elements:" << endl;
+    cout << "Final array: ";
     for (int i = 0; i < count; i++)
+    {
         cout << arr[i] << " ";
+    }
+    cout << endl;
 
     delete[] arr;
     return 0;
