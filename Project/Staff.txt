@@ -1,0 +1,5 @@
+3001|Hassan Ali|Manager|45000.00
+3002|Amina Khan|Operator|25000.00
+3003|Omar Sheikh|Guide|20000.00
+3004|Layla Ahmed|Security|22000.00
+3005|Karim Hassan|Maintenance|23000.00

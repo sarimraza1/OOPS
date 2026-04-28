@@ -1,0 +1,5 @@
+4001|Popcorn|150|2.50
+4002|Ice Cream|200|1.50
+4003|Soft Drinks|300|1.75
+4004|Cotton Candy|100|3.00
+4005|Park Merchandise|50|15.00

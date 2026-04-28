@@ -1,0 +1,5 @@
+1|Roller Coaster|150.00|1
+2|Ferris Wheel|100.00|1
+3|Bumper Cars|75.00|1
+4|Log Flume|120.00|1
+5|Teacup Ride|50.00|1

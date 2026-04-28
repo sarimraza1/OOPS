@@ -1,0 +1,5 @@
+2001|Eid Festival|2026-04-29|500|150
+2002|Bake Sale|2026-05-03|200|50
+2003|Chand Raat|2026-05-01|300|80
+2004|Basant Kite Festival|2026-03-21|1000|0
+2005|Holi Color Festival|2026-03-17|800|200
