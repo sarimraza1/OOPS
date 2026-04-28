@@ -1,0 +1,273 @@
+================================================================================
+                          SLOWWHEELS CLASS DIAGRAM
+================================================================================
+
+--------------------------------------------------------------------------------
+CLASS: CarType
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - bType : string
+    - fType : string
+    - gearBox : string
+    - ccEngine : int
+    - assembly : string
+
+FUNCTIONS:
+    + CarType()
+    + CarType(b:string, f:string, g:string, c:int, m:string)
+    + CarType(obj:CarType)
+    + getBType() : string
+    + getFType() : string
+    + getGearBox() : string
+    + getCCEngine() : int
+    + setBType(b:string) : void
+    + setFType(f:string) : void
+    + showType() : void
+    + isAutomatic() : bool
+    + isImported() : bool
+    + getInput() : void
+
+--------------------------------------------------------------------------------
+CLASS: BikeType
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - engStrokes : int
+    - ccPower : int
+    - kickOrSelf : string
+    - usedOrNew : string
+    - style : string
+
+FUNCTIONS:
+    + BikeType()
+    + BikeType(s:int, c:int, k:string, u:string, st:string)
+    + BikeType(obj:BikeType)
+    + getStrokes() : int
+    + getCC() : int
+    + getKickType() : string
+    + setStrokes(s:int) : void
+    + setCC(c:int) : void
+    + showType() : void
+    + isSelfStart() : bool
+    + isNew() : bool
+    + getInput() : void
+
+--------------------------------------------------------------------------------
+CLASS: Car
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - carBrand : string
+    - carModel : string
+    - carYear : int
+    - carPrice : long
+    - kmDriven : int
+    - loc : string
+    - specs : CarType
+    - approved : bool
+    - soldBy : string
+    - carsCount : int (static)
+
+FUNCTIONS:
+    + Car()
+    + Car(br:string, md:string, yr:int, pr:long, km:int, lc:string, sp:CarType, sl:string)
+    + Car(obj:Car)
+    + getBrand() : string
+    + getModel() : string
+    + getYear() : int
+    + getPrice() : long
+    + getIsApproved() : bool
+    + getSellerName() : string
+    + setPrice(p:long) : void
+    + setIsApproved(a:bool) : void
+    + showDetails() : void
+    + checkFilter(maxPr:long, minYr:int, maxKm:int) : bool
+    + updatePrice(newPrice:long) : void
+    + getInput(sl:string) : void
+    + getTotalCars() : int (static)
+
+--------------------------------------------------------------------------------
+CLASS: Bike
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - bikeBrand : string
+    - bikeModel : string
+    - bikeYear : int
+    - bikePrice : long
+    - kmRun : int
+    - loc : string
+    - specs : BikeType
+    - approved : bool
+    - soldBy : string
+    - bikesCount : int (static)
+
+FUNCTIONS:
+    + Bike()
+    + Bike(br:string, md:string, yr:int, pr:long, km:int, lc:string, sp:BikeType, sl:string)
+    + Bike(obj:Bike)
+    + getBrand() : string
+    + getModel() : string
+    + getYear() : int
+    + getPrice() : long
+    + getIsApproved() : bool
+    + getSellerName() : string
+    + setPrice(p:long) : void
+    + setIsApproved(a:bool) : void
+    + showDetails() : void
+    + checkFilter(maxPr:long, minYr:int, maxKm:int) : bool
+    + updatePrice(newPrice:long) : void
+    + getInput(sl:string) : void
+    + getTotalBikes() : int (static)
+
+--------------------------------------------------------------------------------
+CLASS: Seller
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - name : string
+    - email : string
+    - phone : string
+    - city : string
+    - joinedOn : string
+    - postedAds : string[10]
+    - adsCount : int
+
+FUNCTIONS:
+    + Seller()
+    + Seller(n:string, e:string, ph:string, c:string, ms:string)
+    + Seller(obj:Seller)
+    + getName() : string
+    + getPhone() : string
+    + getCity() : string
+    + addListing(ad:string) : void
+    + viewMyListings() : void
+    + showInfo() : void
+    + getListingCount() : int
+    + removeListing(idx:int) : void
+
+--------------------------------------------------------------------------------
+CLASS: Buyer
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - name : string
+    - phone : string
+    - email : string
+    - city : string
+    - maxBudget : long
+    - savedCars : int[10]
+    - savedCount : int
+
+FUNCTIONS:
+    + Buyer()
+    + Buyer(n:string, ph:string, e:string, c:string, b:long)
+    + Buyer(obj:Buyer)
+    + getName() : string
+    + getBudget() : long
+    + getSavedCount() : int
+    + getSavedCar(i:int) : int
+    + saveFavorite(idx:int) : void
+    + viewFavorites() : void
+    + showInfo() : void
+    + canAfford(price:long) : bool
+    + removeFavorite(idx:int) : void
+
+--------------------------------------------------------------------------------
+CLASS: Admin
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - name : string
+    - email : string
+    - phone : string
+    - approvedCount : int
+    - platformName : const char* const
+
+FUNCTIONS:
+    + Admin()
+    + Admin(n:string, e:string, ph:string)
+    + Admin(obj:Admin)
+    + getName() : string
+    + getPlatform() : const char*
+    + login(pw:string, correctPass:string) : bool
+    + approveCar(car:Car) : void
+    + approveBike(bike:Bike) : void
+    + removeCar(car:Car) : void
+    + showInfo() : void
+
+--------------------------------------------------------------------------------
+CLASS: Accessory
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - name : string
+    - price : double
+    - category : string
+    - brand : string
+    - stock : int
+
+FUNCTIONS:
+    + Accessory()
+    + Accessory(n:string, p:double, c:string, b:string, s:int)
+    + Accessory(obj:Accessory)
+    + getName() : string
+    + getPrice() : double
+    + showAccessory() : void
+    + updateStock(qty:int) : void
+    + isAvailable() : bool
+    + matchCategory(cat:string) : bool
+
+--------------------------------------------------------------------------------
+CLASS: Blog
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - title : string
+    - content : string
+    - author : string
+    - category : string
+    - views : int
+
+FUNCTIONS:
+    + Blog()
+    + Blog(t:string, c:string, a:string, cat:string)
+    + Blog(obj:Blog)
+    + getTitle() : string
+    + showBlog() : void
+    + addView() : void
+    + isPopular() : bool
+    + matchAuthor(name:string) : bool
+
+--------------------------------------------------------------------------------
+CLASS: Message
+--------------------------------------------------------------------------------
+ATTRIBUTES:
+    - fromUser : string
+    - toUser : string
+    - subject : string
+    - content : string
+    - readStatus : bool
+
+FUNCTIONS:
+    + Message()
+    + Message(s:string, r:string, sub:string, c:string)
+    + Message(obj:Message)
+    + getSender() : string
+    + getReceiver() : string
+    + showMessage() : void
+    + getInput(senderName:string) : void
+    + markAsRead() : void
+    + isRead() : bool
+
+================================================================================
+                              RELATIONSHIPS
+================================================================================
+
+COMPOSITION:
+    - Car contains CarType (Car *-- CarType)
+    - Bike contains BikeType (Bike *-- BikeType)
+
+AGGREGATION:
+    - Seller has array of Car references (Seller o-- Car)
+    - Seller has array of Bike references (Seller o-- Bike)
+    - Buyer has array of Car references (Buyer o-- Car)
+    - Buyer has array of Bike references (Buyer o-- Bike)
+
+DEPENDENCY:
+    - Admin uses Car (Admin ..> Car)
+    - Admin uses Bike (Admin ..> Bike)
+
+================================================================================
