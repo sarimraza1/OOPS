@@ -2,8 +2,7 @@
 #include <fstream>
 #include <iomanip>
 #include <iostream>
-#include <limits>
-#include <numeric>
+
 #include <sstream>
 #include <stdexcept>
 #include <string>
@@ -68,12 +67,12 @@ T readNumber(const string &prompt, T minValue, T maxValue)
         cout << prompt;
         if (cin >> value && value >= minValue && value <= maxValue)
         {
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            cin.ignore(10000, '\n');
             return value;
         }
         cout << "Invalid input. Try again.\n";
         cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore(10000, '\n');
     }
 }
 
@@ -399,9 +398,9 @@ double calculateAverageRating(const vector<Feedback> &feedbacks)
     if (feedbacks.empty())
         return 0.0;
 
-    double sum = accumulate(feedbacks.begin(), feedbacks.end(), 0.0,
-                            [](double total, const Feedback &f)
-                            { return total + f.rating; });
+    double sum = 0.0;
+    for (const auto &f : feedbacks)
+        sum += f.rating;
 
     return sum / feedbacks.size();
 }
@@ -933,9 +932,9 @@ private:
 
     void showRevenueReport() const
     {
-        double revenue = accumulate(tickets.begin(), tickets.end(), 0.0,
-                                    [](double sum, const Ticket &t)
-                                    { return sum + t.getAmount(); });
+        double revenue = 0.0;
+        for (const auto &t : tickets)
+            revenue += t.getAmount();
 
         cout << "\n===== REVENUE REPORT =====\n";
         cout << "Total Ticket Revenue: $" << fixed << setprecision(2) << revenue << "\n";
