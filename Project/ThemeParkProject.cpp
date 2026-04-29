@@ -11,7 +11,7 @@
 
 using namespace std;
 
-// -------------------- Color Utility --------------------
+
 class ConsoleColor
 {
 public:
@@ -57,7 +57,7 @@ public:
     }
 };
 
-// -------------------- Template Utilities --------------------
+
 template <typename T>
 T readNumber(const string &prompt, T minValue, T maxValue)
 {
@@ -85,7 +85,7 @@ const T *findById(const vector<T> &items, int id)
     return (it == items.end()) ? nullptr : &(*it);
 }
 
-// -------------------- Abstract Base Class --------------------
+
 class ParkEntity
 {
 protected:
@@ -99,17 +99,16 @@ public:
     int getId() const { return id; }
     string getName() const { return name; }
 
-    virtual void display() const = 0;     // Abstraction + Polymorphism
-    virtual string serialize() const = 0; // For file handling
+    virtual void display() const = 0;
+    virtual string serialize() const = 0;
 };
 
-// -------------------- Derived Class: Visitor --------------------
+
 class Visitor : public ParkEntity
 {
-private: // Encapsulation
     int age;
     string email;
-    static int nextId; // Static member
+    static int nextId;
 
 public:
     Visitor(const string &name, int age, const string &email)
@@ -145,7 +144,7 @@ public:
 
 int Visitor::nextId = 1;
 
-// -------------------- Derived Class: Ride --------------------
+
 class Ride : public ParkEntity
 {
 private:
@@ -187,7 +186,7 @@ public:
 
 int Ride::nextId = 1;
 
-// -------------------- Ticket (Operator Overloading + Friend) --------------------
+
 class Ticket
 {
 private:
@@ -222,11 +221,10 @@ public:
         return ss.str();
     }
 
-    // Operator overloading
+    
     double operator+(const Ticket &other) const { return amount + other.amount; }
     bool operator<(const Ticket &other) const { return amount < other.amount; }
 
-    // Friend function + friend stream operator
     friend void applyDiscount(Ticket &ticket, double percentage);
     friend ostream &operator<<(ostream &os, const Ticket &ticket);
 };
@@ -250,7 +248,7 @@ ostream &operator<<(ostream &os, const Ticket &ticket)
     return os;
 }
 
-// -------------------- Derived Class: Event --------------------
+
 class Event : public ParkEntity
 {
 private:
@@ -302,7 +300,7 @@ public:
 
 int Event::nextId = 2001;
 
-// -------------------- Derived Class: Staff --------------------
+
 class Staff : public ParkEntity
 {
 private:
@@ -344,7 +342,7 @@ public:
 
 int Staff::nextId = 3001;
 
-// -------------------- Feedback Class (Aggregation) --------------------
+
 class Feedback
 {
 private:
@@ -387,7 +385,6 @@ public:
         return ss.str();
     }
 
-    // Friend function to calculate average rating
     friend double calculateAverageRating(const vector<Feedback> &feedbacks);
 };
 
@@ -405,7 +402,7 @@ double calculateAverageRating(const vector<Feedback> &feedbacks)
     return sum / feedbacks.size();
 }
 
-// -------------------- Derived Class: Inventory --------------------
+
 class Inventory : public ParkEntity
 {
 private:
@@ -454,14 +451,14 @@ public:
 
 int Inventory::nextId = 4001;
 
-// -------------------- User Authentication --------------------
+
 class User
 {
 protected:
     int userId;
     string username;
     string password;
-    string role; // "Manager" or "Staff"
+    string role; 
 
 public:
     User(int userId, const string &username, const string &password, const string &role)
@@ -483,18 +480,18 @@ public:
     }
 };
 
-// -------------------- Main System --------------------
+
 class ThemeParkSystem
 {
 private:
-    vector<Visitor> visitors;    // STL
-    vector<Ride> rides;          // STL
-    vector<Ticket> tickets;      // STL
-    vector<Event> events;        // STL
-    vector<Staff> staff;         // STL
-    vector<Feedback> feedbacks;  // STL
-    vector<Inventory> inventory; // STL
-    vector<User> users;          // Authentication users
+    vector<Visitor> visitors;
+    vector<Ride> rides;
+    vector<Ticket> tickets;
+    vector<Event> events;
+    vector<Staff> staff;
+    vector<Feedback> feedbacks;
+    vector<Inventory> inventory;
+    vector<User> users;
 
     const string visitorsFile = "Visitors.txt";
     const string ridesFile = "Rides.txt";
