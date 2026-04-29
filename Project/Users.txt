@@ -1,2 +1,2 @@
-1001|staff1|pass123|Staff
-2001|manager1|admin123|Manager
+1001|staff|123|Staff
+2001|boss|321|Manager

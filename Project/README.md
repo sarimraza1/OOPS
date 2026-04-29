@@ -22,8 +22,8 @@ A robust C++ terminal application for managing theme park operations with persis
 2. **Run**: `ThemePark.exe`
 
 ### Default Credentials
-- **Staff**: `staff1` / `pass123`
-- **Manager**: `manager1` / `admin123`
+- **Staff**: `staff` / `123`
+- **Manager**: `boss` / `321`
 
 ## 👥 Contributors
 - **Sarim**

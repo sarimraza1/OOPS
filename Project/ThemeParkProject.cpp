@@ -221,7 +221,7 @@ public:
         return ss.str();
     }
 
-    
+
     double operator+(const Ticket &other) const { return amount + other.amount; }
     bool operator<(const Ticket &other) const { return amount < other.amount; }
 
@@ -458,7 +458,7 @@ protected:
     int userId;
     string username;
     string password;
-    string role; 
+    string role;
 
 public:
     User(int userId, const string &username, const string &password, const string &role)
@@ -709,8 +709,8 @@ private:
     {
         if (users.empty())
         {
-            users.emplace_back(1001, "staff1", "pass123", "Staff");
-            users.emplace_back(2001, "manager1", "admin123", "Manager");
+            users.emplace_back(1001, "staff", "123", "Staff");
+            users.emplace_back(2001, "boss", "321", "Manager");
             saveUsers();
         }
     }
@@ -1143,6 +1143,9 @@ private:
             string userIdStr, username, password, role;
             getline(ss, userIdStr, '|');
             getline(ss, username, '|');
+            getline(ss, password, '|');
+            getline(ss, role, '|');
+
             getline(ss, password, '|');
             getline(ss, role, '|');
 
