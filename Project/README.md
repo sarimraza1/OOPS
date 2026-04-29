@@ -1,48 +1,30 @@
 # Theme Park Management System
 
-A C++ terminal-based Object-Oriented application designed to manage the core operations of a theme park. This system uses standard C++ file handling to persist data and provides an interactive command-line interface for ease of use.
+A robust C++ terminal application for managing theme park operations with persistent storage.
 
-## 🚀 Features
+## 🚀 Key Features
+- **Role-Based Access**: Separate portals for Staff and Managers.
+- **Entity Management**: Comprehensive CRUD for Visitors, Rides, Tickets, Events, and Staff.
+- **Inventory Tracking**: Monitor park supplies and costs.
+- **Revenue & Feedback**: Automated revenue reports and visitor feedback analysis.
+- **Data Persistence**: 8-file database system using pipe-delimited text files.
+- **Robust UI**: Colored Windows console interface with template-based input validation.
 
-The system is built on strong **Object-Oriented Programming (OOP)** principles such as Abstraction, Encapsulation, Polymorphism, and Inheritance. It supports the management of several entities:
+## 🛠️ Core OOP Implementation
+- **Inheritance & Polymorphism**: Extends `ParkEntity` base class with dynamic dispatch for entity lists.
+- **Encapsulation**: Private data members with controlled access via public getters.
+- **Abstraction**: Interface enforcement through pure virtual functions.
+- **Operator Overloading**: Custom operators for ticket comparisons and formatted output.
+- **STL & Templates**: Extensive use of `std::vector`, algorithms, and custom template utilities.
 
-*   **Rides Management:** Track ride details, operational status (Operational / Maintenance), and pricing.
-*   **Visitor Management:** Register and track visitor information, including age and contact details.
-*   **Ticketing System:** Issue tickets mapping visitors to specific rides and track amounts.
-*   **Staff & Users:** Manage employees and system users.
-*   **Inventory & Events:** Oversee park inventory, plan special events, and record feedback.
-*   **Data Persistence:** All records are consistently loaded from and saved to simple `.txt` files (e.g., `Rides.txt`, `Visitors.txt`, `Tickets.txt`, etc.).
-*   **Interactive Command Line UI:** Intuitive console menus with colored outputs (using Windows Console API) and robust error handling for user inputs.
+## 🖥️ Getting Started
+1. **Compile**: `g++ ThemeParkProject.cpp -o ThemePark.exe`
+2. **Run**: `ThemePark.exe`
 
-## ⚙️ Program Flow
-
-1.  **Launch:** When the program starts, it loads existing data from the `.txt` database files into memory (Standard Template Library vectors).
-2.  **Main Menu:** The user is presented with a colored terminal UI allowing them to navigate between different management modules (e.g., Manage Rides, Manage Visitors, Issue Tickets).
-3.  **Interaction:** 
-    *   Functions utilize C++ abstractions and templates to safely read user inputs.
-    *   System performs CRUD operations (Create, Read, Update, Delete) on the classes (`Visitor`, `Ride`, `Ticket`, etc.).
-4.  **Save & Exit:** On saving/modifying or gracefully exiting, the `serialize()` polymorphic methods are called on the entities, writing the up-to-date data back into their respective text files to ensure data persistence across sessions.
-
-## 🛠️ Tech Stack & Concepts Used
-
-*   **Language:** C++
-*   **Concepts:** OOP (Classes, Virtual Functions/Polymorphism, Inheritance), Operator Overloading, Templates, and lambda functions (`<algorithm>`).
-*   **Storage:** Local Text Files (Deserialization via `<fstream>` and `<sstream>`)
-*   **UI:** Windows Command Prompt Console Colors (`<windows.h>`)
-
-## 🖥️ How to Run
-
-1.  Requires a standard C++ compiler (e.g., MinGW/GCC) targeting a Windows environment (due to `windows.h` usage).
-2.  Compile the main file: 
-    ```bash
-    g++ ThemeParkProject.cpp -o ThemeParkProject.exe
-    ```
-3.  Run the generated executable:
-    ```bash
-    ThemeParkProject.exe
-    ```
+### Default Credentials
+- **Staff**: `staff1` / `pass123`
+- **Manager**: `manager1` / `admin123`
 
 ## 👥 Contributors
-
-*   **Sarim**
-*   **Abbas**
+- **Sarim**
+- **Abbas**
