@@ -1,10 +1,9 @@
-<div align="center">
 
-# 🚗 Slow-Wheels Extended Version
 
-### Assignment 02
+#  Slow-Wheels Assignment 2
 
-**Mohammad Sarim Raza** &nbsp;·&nbsp; `25K-0075` &nbsp;·&nbsp; BAI-2C
+
+**Mohammad Sarim Raza** 25K-0075 &nbsp;·&nbsp; BAI-2C
 
 </div>
 
