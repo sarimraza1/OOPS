@@ -18,7 +18,7 @@ using namespace std;
 
 const int MAX_CARS = 50;
 const int MAX_BIKES = 50;
-const string APP_NAME = "Pak-Wheels";
+const string APP_NAME = "Slow-Wheels";
 const int MAX_MSG = 20;
 const string admpass = "1289";
 
